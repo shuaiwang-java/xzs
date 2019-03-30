@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -16,13 +15,16 @@ public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
-    @Autowired
     private UserIService userIService;
+
+    @Autowired
+    public void setUserIService(UserIService userIService){
+        this.userIService = userIService;
+    }
+
 
     @GetMapping("/user")
     public Msg getUser(String name){
-
-        System.out.println("【前端传来的name值】"+name);
         User user = null;
         try {
             user = userIService.getUserByName(name);

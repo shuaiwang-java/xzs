@@ -1,10 +1,6 @@
 package cd.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import lombok.Getter;
-import lombok.Setter;
-
-import java.io.Serializable;
 
 @JsonAutoDetect
 public class User{

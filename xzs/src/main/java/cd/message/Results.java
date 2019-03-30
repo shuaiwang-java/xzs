@@ -1,8 +1,5 @@
 package cd.message;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * 返回信息类
  */

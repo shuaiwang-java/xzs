@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
@@ -32,7 +33,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o)throws  Exception{
         log.info("----------------------------请求方法执行之前---------------------------------");
         //放行验证和登录接口
-        if("/isUser".equals(httpServletRequest.getRequestURI()) || "/login".equals(httpServletRequest.getRequestURI())){
+        if("/test".equals(httpServletRequest.getRequestURI()) || "/login".equals(httpServletRequest.getRequestURI())){
             return true;
         }
 
@@ -99,8 +100,7 @@ public class LoginInterceptor implements HandlerInterceptor {
             writer.close();
             return false;
         }
-
-        return true;
+            return true;
     }
 
     public void postHandle(HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView)throws Exception{

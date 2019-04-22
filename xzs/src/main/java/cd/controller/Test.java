@@ -14,8 +14,14 @@ public class Test {
 
     @GetMapping("/test")
     public void getTestData(String name){
-        logger.info("【获取到的数据】"+ name);
-        System.out.println("【获取到的数据】"+"【======"+name+"=======】");
+        logger.info("【get方式获取到的数据】"+ name);
+        System.out.println("【get方式获取到的数据】"+"【======"+name+"=======】");
+    }
+
+    @PostMapping("/test")
+    public void postTestData(String name){
+        logger.info("【POST方式获取到的数据】"+ name);
+        System.out.println("【post方式获取到的数据】"+"【======"+name+"=======】");
     }
 
 }
